@@ -1,0 +1,28 @@
+public class Tester {
+  public static void main(String[] args) {
+    //Testing NoNullArrayList
+    NoNullArrayList<Integer> a = new NoNullArrayList<Integer>();
+    System.out.println(a.add(4));
+    try {
+      a.add(1);
+      a.add(null);
+      a.add(5);
+    } catch (IllegalArgumentException e) {
+      System.out.println("bruh no null");
+      //e.printStackTrace();
+    }
+    System.out.println(a);
+
+    System.out.println();
+    NoNullArrayList<Integer> a1 = new NoNullArrayList<Integer>(1);
+    try {
+      a1.add(0,null);
+    } catch (IllegalArgumentException e) {
+      System.out.println("no null!!");
+      e.printStackTrace();
+    }
+    a1.add(0,1);
+    a1.add(0,2);
+    System.out.println(a1);
+  }
+}
