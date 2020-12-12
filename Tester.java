@@ -12,13 +12,23 @@ public class Tester {
       //e.printStackTrace();
     }
     System.out.println(a);
+    System.out.println();
+
+    System.out.println(a.set(0,3));
+    try {
+      a.set(0,null);
+    } catch (IllegalArgumentException e) {
+      System.out.println("no set null!!");
+      e.printStackTrace();
+    }
+    System.out.println(a);
 
     System.out.println();
     NoNullArrayList<Integer> a1 = new NoNullArrayList<Integer>(1);
     try {
       a1.add(0,null);
     } catch (IllegalArgumentException e) {
-      System.out.println("no null!!");
+      System.out.println("bruh no null!!");
       e.printStackTrace();
     }
     a1.add(0,1);
