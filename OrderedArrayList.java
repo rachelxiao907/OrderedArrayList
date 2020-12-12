@@ -9,7 +9,7 @@ OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T> {
     super();
   }
 
-  public OrderedArrayList(startingCapacity) {
+  public OrderedArrayList(int startingCapacity) {
     super(startingCapacity);
   }
 
