@@ -20,6 +20,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
 
   private int index(T element) {
     int index = 0;
+    //loop through elements and stop when element doesn't precede current index anymore
     while(index < size() && element.compareTo(get(index)) > 0) {
       index++;
     }
@@ -28,6 +29,13 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
 
   public void add(int index, T element) {
     super.add(index(element), element);
+  }
+
+  public T set(int index, T element) {
+    T replaced = get(index);
+    remove(index);
+    add(element);
+    return replaced;
   }
 
 }
