@@ -34,5 +34,20 @@ public class Tester {
     a1.add(0,1);
     a1.add(0,2);
     System.out.println(a1);
+    System.out.println();
+    System.out.println();
+    System.out.println("Testing OrderedArrayList");
+
+    OrderedArrayList<Integer> o = new OrderedArrayList<Integer>();
+    o.add(1);
+    System.out.println(o);
+    o.add(4);
+    System.out.println(o);
+    o.add(-1);
+    System.out.println(o);
+    o.add(2);
+    System.out.println(o);
+    o.add(1,3);
+    System.out.println(o);
   }
 }
