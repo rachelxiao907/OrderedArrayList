@@ -14,22 +14,20 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public boolean add(T element) {
-    int old = super.size();
     super.add(index(element), element);
-    return super.size() == old + 1;
+    return true;
   }
 
   private int index(T element) {
-    int index = super.size() - 1;
-    if (super.size() == 0) {
-      index = 0;
-    }
-    for (int i = 0; i < super.size()-1; i++) {
-      if (element.compareTo(super.get(i)) <= 0 && element.compareTo(super.get(i+1)) >= 0) {
-        index = i;
-      }
+    int index = 0;
+    while(index < size() && element.compareTo(get(index)) > 0) {
+      index++;
     }
     return index;
+  }
+
+  public void add(int index, T element) {
+    super.add(index(element), element);
   }
 
 }
