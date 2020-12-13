@@ -36,8 +36,11 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
 
   public T set(int index, T element) {
     T replaced = get(index);
-    add(element);
+    if (element == null) {
+      throw new IllegalArgumentException("Cannot set to null");
+    }
     super.remove(index);
+    super.add(index(element), element);
     return replaced;
   }
 
