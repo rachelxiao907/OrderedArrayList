@@ -19,6 +19,9 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   private int index(T element) {
+    if (element == null) {
+      throw new IllegalArgumentException("Cannot add null");
+    }
     int index = 0;
     //loop through elements and stop when element doesn't precede current index anymore
     while(index < size() && element.compareTo(get(index)) > 0) {
@@ -33,8 +36,8 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
 
   public T set(int index, T element) {
     T replaced = get(index);
-    remove(index);
     add(element);
+    super.remove(index);
     return replaced;
   }
 
