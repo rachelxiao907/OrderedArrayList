@@ -49,5 +49,7 @@ public class Tester {
     System.out.println(o);
     o.add(1,3);
     System.out.println(o);
+    o.set(1,3);
+    System.out.println(o);
   }
 }
